@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # <-- 이것 추가
 
 with open("csvjson.json", "r", encoding="utf-8") as f:
     od_data = json.load(f)
